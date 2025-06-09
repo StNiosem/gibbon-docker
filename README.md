@@ -4,7 +4,7 @@ An unofficial docker container for Gibbon school platform
 Based on PHP:8.3-apache, listens on port 2010 by default
 
 > [!CAUTION]
-> This image does not come with a MariaDB/MySQL server. You will need one, either in Docker or anywhere, really.Ò
+> This image does not come with a MariaDB/MySQL server. You will need one, either in Docker or anywhere, really.
 
 ## Example `docker-compose.yml`
 See `docker-compose.yml`
