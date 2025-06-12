@@ -5,6 +5,8 @@ services:
     restart: unless-stopped
     ports:
       - "2010:2010"
+    volumes:
+      - gibbon_data:/var/www/html
     
   db:
     image: mariadb:latest
@@ -16,8 +18,10 @@ services:
       MYSQL_USER: gibbon
       MYSQL_PASSWORD: gibbon
     volumes:
-      - gibbondb:/var/lib/mysql
+      - gibbon_db:/var/lib/mysql
 
 volumes:
-  gibbondb:
+  gibbon_data:
+    driver: local
+  gibbon_db:
     driver: local
