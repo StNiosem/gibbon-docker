@@ -16,7 +16,8 @@ services:
       MYSQL_USER: gibbon
       MYSQL_PASSWORD: gibbon
     volumes:
-      - db_data:/var/lib/mysql
+      - gibbondb:/var/lib/mysql
+
 volumes:
-  db_data:
+  gibbondb:
     driver: local
