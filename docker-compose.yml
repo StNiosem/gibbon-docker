@@ -1,0 +1,22 @@
+services:
+  gibbon:
+    image: niosem/gibbon-docker:latest
+    container_name: gibbon
+    restart: unless-stopped
+    ports:
+      - "2010:2010"
+    
+  db:
+    image: mariadb:latest
+    container_name: gibbon-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gibbon
+      MYSQL_USER: gibbon
+      MYSQL_PASSWORD: gibbon
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
+    driver: local
